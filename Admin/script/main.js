@@ -1,3 +1,12 @@
+function showError(message) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: message,
+    })
+}
+
+
 window.onload = function() {
     document.getElementById('btnLogin').addEventListener('click', function(event) {
         event.preventDefault();
@@ -6,12 +15,7 @@ window.onload = function() {
 
         //validate data
         if (username == "" || password == "") {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Please fill in all fields!',
-            })
-            return;
+            showError("Please fill in all fields");
         }
 
         const data = {
@@ -47,26 +51,14 @@ async function login(data) {
                 });
 
             setTimeout(function(){
-                window.location.href = 'dashboard.html';
+                window.location.href = 'Profile.html';
             }, 3000);
         } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                footer: '<a href>Why do I have this issue?</a>'
-            })
-            console.log("Fail");
+            showError("Invalid username or password");
         }
     }
     catch (error) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong!',
-            footer: '<a href>Why do I have this issue?</a>'
-        })
-        console.log(error);
+        showError("An error occurred. Please try again later");
     }
 
 }
