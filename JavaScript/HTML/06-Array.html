@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        //Array
+        console.log("This is Array");
+
+        var arr = [1 , 2, 3, 4, 5];
+        console.log(arr);
+
+        var arr2 = ["a" , "b", "c", "d", "e"];
+        console.log(arr2);
+        console.log("First element", arr2[0]);
+
+        var arr3 = [1, "two", 3, "Four", 5];
+        console.log(arr3.length);
+
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        console.log(arr3[0]);
+        console.log(arr3[1]);
+        console.log(arr3[2]);
+        console.log(arr3[3]);
+        console.log(arr3[4]);
+
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        //array update
+
+        arr3[0] = 10;
+        console.log(arr3[0]);
+
+        arr3[1] = 20;
+        console.log(arr3[1]);
+
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        arr.push(6);
+        console.log(arr);
+
+        arr.push(7);
+        console.log(arr);
+
+        arr.push(8);
+        console.log(arr);
+
+        arr.push(9);
+        console.log(arr);
+
+        arr.push(10);
+        console.log(arr);
+
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        //remove
+        arr.pop()
+        console.log(arr);
+
+        arr.pop()
+        console.log(arr);
+
+        arr.pop()
+        console.log(arr);
+
+        arr.pop()
+        console.log(arr);
+
+        arr.pop()
+        console.log(arr);
+
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        //arr add at first
+        arr.unshift(0)
+        console.log(arr);
+
+        arr.unshift(-1)
+        console.log(arr);
+
+        arr.unshift(-2)
+        console.log(arr);
+
+        arr.unshift(-3)
+        console.log(arr);
+
+        arr.unshift(-4)
+        console.log(arr);
+        
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        
+        //arr remove from first
+
+        arr.shift()
+        console.log(arr);
+
+        arr.shift()
+        console.log(arr);
+
+        arr.shift()
+        console.log(arr);
+
+        arr.shift()
+        console.log(arr);
+
+        arr.shift()
+        console.log(arr);
+
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        arr4 = [1, 2, 3, 4, 5, 6]
+
+        //(เริ้มจากตัวที่เท่าไหร่, ลบออกกี่ตัว, เอาเลขนั้นไปวางทีตัวนั้น)
+        arr4.splice(2, 0, 5)
+        console.log(arr4)
+
+        arr4.splice(2, 3, 5)
+        console.log(arr4)
+
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        arr5 = [1, 2, 3, 4, 5, 6]
+        
+        //(เอาจากตัวที่ 4 เป็นต้นไป)
+        arr6 = arr5.slice(3);
+        console.log(arr6);
+
+        arr6 = arr5.slice(0,3);
+        console.log(arr6);
+
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        //array copy
+        var arr = [1, 2, 3, 4, 5];
+        var arr7 = arr;
+
+    </script>
+    
+</body>
+</html>

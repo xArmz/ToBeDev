@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Data From API</title>
+</head>
+<body>
+    <h3>Student List (Using 'for' Loop)</h3>
+    <button onclick="myFunction()">Hide/Show Table</button>
+    
+    <table id="studentTable" border="1" width="100%">
+        <thead style="background-color: #EAEAEA;">
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody id="studentListFor">
+        </tbody>
+    </table>
+
+    <script>
+        async function getData() {
+            const url = 'https://my.api.mockaroo.com/student_schema.json?key=c19d7ec0';
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                const json = await response.json();
+                return json;
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        async function displayDataFor() {
+            const studentData = await getData();
+            let tableContent = '';
+
+            for (let i = 0; i < studentData.length; i++) {
+                const tbl = `
+                <tr>
+                    <td>${studentData[i].id}</td>
+                    <td>${studentData[i].name}</td>
+                    <td>${studentData[i].age}</td>
+                    <td>${studentData[i].city}</td>
+                </tr>`;
+                tableContent += tbl;
+            }
+
+            document.getElementById("studentListFor").innerHTML = tableContent;
+        }
+
+        displayDataFor();
+
+        function myFunction() {
+            var table = document.getElementById("studentTable");
+            if (table.style.display === "none") {
+                table.style.display = "block";
+            } else {
+                table.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

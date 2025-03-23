@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculate(x,y,callback){
+            setTimeout(()=>{
+                var sum = x + y;
+                callback(sum);
+            }, 1000);
+        }
+        
+        function display(result){
+            console.log(`result = ${result}`);
+        }
+
+        //calculate and use callback function to display result
+        calculate(10,20,display);
+
+        function calculate(x,y,callback){
+            setTimeout(()=>{
+                var sum = x + y;
+                callback(sum);
+            }, 2000);
+        }
+        
+        calculate(10,30,function(result){
+            console.log(`result = ${result}`);
+        })
+
+
+        var url1 = "arm.com/files.json";
+        var url2 = "arm.com/files2.json";
+        var url3 = "arm.com/files3.json";
+
+        function downloading(url, callback){
+            setTimeout(()=>{
+                console.log(`Downloading ${url} ...`);
+                callback(url);
+            },3000)
+        }
+
+        downloading(url1, function(success){
+            console.log(`Downloaded ${url1} successfully`);
+            downloading(url2, function(success){
+                console.log(`Downloaded ${url2} successfully`);
+                downloading(url3, function(success){
+                    console.log(`Downloaded ${url3} successfully`);
+                })
+            })
+
+        })
+
+
+    </script>
+</body>
+</html>

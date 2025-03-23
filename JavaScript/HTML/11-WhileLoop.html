@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var i = 0;
+        while ( i<= 10)
+        {
+            console.log("Loop index ->", i)
+            i++;
+        }
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        //loop through an array
+        var cars = ["BMW", "Volvo", "Ford", "Toyota", "Audi"];
+        var i = 0;
+        while (i < cars.length)
+        {
+            console.log("Car ->", cars[i])
+            i++;
+        }
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        
+        //find F
+        var cars = ["BMW", "Volvo", "Ford", "Toyota", "Audi"];
+        var i = 0;
+        while (i < cars.length)
+        {
+            if (cars[i][0] === "F")
+            {
+                console.log("Car start with F ->", cars[i]);
+            }
+            i++;
+        }
+    </script>
+</body>
+</html>

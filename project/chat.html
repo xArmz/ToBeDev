@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="bg-gray-100 shadow-md p-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-lg font-semibold">Home</a>
+            <a href="#" class="text-lg font-semibold">Contact</a>
+        </div>
+        <div class="relative flex items-center space-x-4">
+            <button class="relative">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 17h5l-1.403-4.21A2 2 0 0016.676 11H7.324a2 2 0 00-1.92 1.79L4 17h5m0 0v1a3 3 0 11-6 0v-1m6 0a3 3 0 116 0v1a3 3 0 11-6 0v-1m6 0h5m-5 0a3 3 0 106 0v-1m-6 0v-1a3 3 0 116 0v1a3 3 0 11-6 0z">
+                    </path>
+                </svg>
+                <span class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-1 rounded-full">3</span>
+            </button>
+            <button class="relative">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15 17h5l-1.403-4.21A2 2 0 0016.676 11H7.324a2 2 0 00-1.92 1.79L4 17h5m0 0v1a3 3 0 11-6 0v-1m6 0a3 3 0 116 0v1a3 3 0 11-6 0v-1m6 0h5m-5 0a3 3 0 106 0v-1m-6 0v-1a3 3 0 116 0v1a3 3 0 11-6 0z">
+                    </path>
+                </svg>
+                <span class="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold px-1 rounded-full">15</span>
+            </button>
+            <div class="flex items-center space-x-2">
+                <img src="me.jpeg" alt="Profile" class="w-8 h-8 rounded-full">
+                <span class="text-lg font-semibold">xArmz</span>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

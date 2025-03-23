@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Func Ocj Json</title>
+</head>
+<body>
+    <script>
+        //Object
+        var person = {
+            firstname: "Arm",
+            lastname: "Sukhahuta",
+            age: 20,
+        };
+        console.log(person);
+
+        //JSON
+        var personJSON = {
+            "firstname": "Arm",
+            "lastname": "Sukhahuta",
+            "age": 20,
+        };
+        console.log(personJSON);
+
+        //Convert JSON to Object
+        var personObject = JSON.parse('{"firstname": "Arm", "lastname": "Sukhahuta", "age": 20}');
+        console.log(personObject);
+
+        //Convert Object to JSON
+        var personJSON = JSON.stringify(person);
+        console.log(personJSON);
+
+        //function get student list
+        function getStudentList() {
+            var studentList = [
+                {
+                    "firstname": "Arm",
+                    "lastname": "Sukhahuta",
+                    "age": 20,
+                },
+                {
+                    "firstname": "John",
+                    "lastname": "Doe",
+                    "age": 25,
+                },
+                {
+                    "firstname": "Jane",
+                    "lastname": "Doe",
+                    "age": 22,
+                },
+            ];
+            return studentList;
+        }
+
+        var studentList = getStudentList();
+        console.log(studentList);
+
+        //for each loop
+        studentList.forEach(function(student) {
+            console.log(student.firstname, student.lastname, student.age);
+        });
+
+        //for of loop
+        for (var student of studentList) {
+            console.log(student.firstname, student.lastname, student.age);
+        }
+
+        //for in loop
+        for (var key in studentList) {
+            console.log(studentList[key].firstname, studentList[key].lastname, studentList[key].age);
+        }
+    </script>   
+</body>
+</html>

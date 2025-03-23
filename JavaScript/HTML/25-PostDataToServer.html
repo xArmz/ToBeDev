@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Post Data to Rest API</h1>
+    <button style="padding: 10px 20px; background-color: #6d776d; color: white; border: 1; cursor: pointer;" onclick="PostData()">Post Data</button>
+    <script>
+        function PostData(){
+            var data = {
+                name: "M",
+                city: "Chiangmai",
+                age: 12
+            };
+
+            var url = "http://localhost:3001/students";
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: JSON.stringify(data),
+            redirect: "follow"
+            };
+
+            fetch(url, requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => console.error(error));
+            }
+    </script>
+</body>
+</html>

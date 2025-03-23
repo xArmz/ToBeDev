@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Website</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Centered Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #3c3c3c;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-size: 2rem;
+            color: #555;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        /* Styling for paragraphs inside a div */
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        /* Box Shadow Cards */
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Button Link Styling */
+        a {
+            color: #0077cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Iframe Styling for YouTube Video */
+        iframe {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 960px;
+            height: 540px;
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Section Headers */
+        .section-header {
+            background-color: #0077cc;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 40px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Message from Lorem Website</h1>
+        
+        <div class="content card">
+            <p>โมเดิร์นโบรกเกอร์น้องใหม่ แอดมิชชั่นแจ๊กพ็อตผลักดันโปรโมเตอร์ น้องใหม่ยนตรกรรมแบตธุหร่ำยูวี มอยส์เจอไรเซอร์ รีเสิร์ช มายาคติ สะเด่าม้านั่ง ไฮเอนด์ชัตเตอร์เอ๊าะโปรเจ็ค เอ็นทรานซ์ โดนัทจุ๊ย ซีเนียร์ เมเปิลแอ๊บแบ๊ว เนอะน้องใหม่พาสเจอร์ไรส์ตุ๊กตุ๊กสเปก โดมิโนแพทยสภาพุทธศตวรรษ ครัวซองแผดเผาแชมปิยองซาตานทิป เมจิคสไตล์เหมยไทยแลนด์แทคติค</p>
+        </div>
+
+        <div class="section-header">แสดงผลในตาราง</div>
+        <div class="card">
+            <table>
+                <tr>
+                    <td>โมเดิร์นโบรกเกอร์น้องใหม่ แอดมิชชั่นแจ๊กพ็อตผลักดันโปรโมเตอร์ น้องใหม่ยนตรกรรมแบตธุหร่ำยูวี มอยส์เจอไรเซอร์ รีเสิร์ช มายาคติ สะเด่าม้านั่ง ไฮเอนด์ชัตเตอร์เอ๊าะโปรเจ็ค เอ็นทรานซ์ โดนัทจุ๊ย ซีเนียร์ เมเปิลแอ๊บแบ๊ว เนอะน้องใหม่พาสเจอร์ไรส์ตุ๊กตุ๊กสเปก โดมิโนแพทยสภาพุทธศตวรรษ ครัวซองแผดเผาแชมปิยองซาตานทิป เมจิคสไตล์เหมยไทยแลนด์แทคติค</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section-header">แสดงวีดีโอ youtube</div>
+        <div class="card">
+            <iframe 
+                src="https://www.youtube.com/embed/HD13eq_Pmp8?si=WKNqZA-Reeimek2a" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="section-header">แสดงข้อมูลแบบ List</div>
+        <div class="card">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>
+                    <strong>Sub-item 1</strong>
+                    <ul>
+                        <li>Sub-item 1</li>
+                        <li>Sub-item 2</li>
+                        <li>Sub-item 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-header">การเชื่อมต่อลิ้งภายนอก</div>
+        <div class="card">
+            <ul>
+                <li><a href="https://www.google.com" target="_blank">Google</a></li>
+                <li><a href="https://mail.google.com" target="_blank">Gmail</a></li>
+                <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Beautiful Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

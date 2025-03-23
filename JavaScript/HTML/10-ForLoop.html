@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for loop
+        console.log("This is For loop");
+
+        var arr = [1, 2, 3, 4, 5];
+
+        //counting array
+        var count = arr.length;
+        console.log(count)
+
+        for(var i = 0; i < count; i++){
+            console.log('Index: ', i, 'value:', arr[i]);
+        }
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        //forEach
+        arr.forEach(function (element, index, array){
+            console.log('Element: ', element, 'Index: ', index, 'Value: ', array[index]);
+        })
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        //for of
+        for (var value of arr) {
+            console.log('Array value: ', value)
+        }
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        //for of divide by 2
+        for (var value of arr) {
+            if (value % 2 == 0)
+            console.log('Array value: ', value);
+        }
+        console.log("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+
+        for (var value of arr) {
+            if (value % 2 == 0)
+            console.log('Array value: ', value);
+        }
+
+
+    </script>
+</body>
+</html>

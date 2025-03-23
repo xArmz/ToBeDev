@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //basic function
+        function sayHello() {
+            console.log("Hello World");
+        }
+
+        sayHello();
+
+        function sayHelloTo(name) {
+            console.log("Hello", name);
+        }
+
+        sayHelloTo("Arm");
+
+        function sum(a,b) {
+            return a + b;
+        }
+
+        sum(10, 20);
+        
+        function sumAndSub(a,b) {
+            return a + b, a - b;
+        }
+
+        var result = sumAndSub(10, 20);
+        console.log(result);
+
+        function sayHelloDefaultParam(name = "World") {
+            console.log("Hello" + name);
+        }
+
+        sayHelloDefaultParam();
+        sayHelloDefaultParam("Arm");
+    </script>
+    
+</body>
+</html>

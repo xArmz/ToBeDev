@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Data From API</title>
+    <script>
+
+        window.onload = function(){
+            document.getElementById("btnSave").addEventListener("click", function() {
+                var name = document.getElementById("name").value;
+                var age = document.getElementById("age").value;
+                var city = document.getElementById("city").value;
+
+                var data = {
+                    name: name,
+                    age: age,
+                    city: city
+                };
+
+                console.log('data -->', data);
+                PostData(data);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h3>Post student from API</h3>
+    <button onclick="myFunction()">Hide/Show Table</button>
+    
+    <div>
+        <form action = "#" method = "post">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age" required><br>
+
+            <label for="city">City:</label><br>
+            <input type="text" id="city" name="city" required><br><br>
+
+            <button type = "button" id = "btnSave">Add</button>
+    </div>
+    <table id="studentTable" border="1" width="100%">
+        <thead style="background-color: #EAEAEA;">
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody id="studentListFor">
+        </tbody>
+    </table>
+
+    <script>
+        async function getData() {
+            const url = 'http://localhost:3001/students';
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`Response status: ${response.status}`);
+                }
+                const json = await response.json();
+                return json;
+            } catch (error) {
+                console.error(error.message);
+            }
+        }
+
+        async function displayDataFor() {
+            const studentData = await getData();
+            let tableContent = '';
+
+            for (let i = 0; i < studentData.length; i++) {
+                const tbl = `
+                <tr>
+                    <td>${studentData[i].id}</td>
+                    <td>${studentData[i].name}</td>
+                    <td>${studentData[i].age}</td>
+                    <td>${studentData[i].city}</td>
+                </tr>`;
+                tableContent += tbl;
+            }
+
+            document.getElementById("studentListFor").innerHTML = tableContent;
+        }
+
+        displayDataFor();
+
+        function myFunction() {
+            var table = document.getElementById("studentTable");
+            if (table.style.display === "none") {
+                table.style.display = "block";
+            } else {
+                table.style.display = "none";
+            }
+        }
+
+        function PostData(data) {
+            const url = 'http://localhost:3001/students';
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+
+    </script>
+</body>
+</html>

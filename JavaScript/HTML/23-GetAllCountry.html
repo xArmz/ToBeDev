@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get All Country</title>
+</head>
+<body>
+    <script src="JS/HttpClient.js"></script>
+    <script>
+        function loading() {
+            var CountryList = document.getElementById("CountryList");
+            var html = `<tr>
+                <td colspan = "6" style="text-align: center;"><img src="IMG/Loading.gif"></td>
+            </tr>`;
+            CountryList.innerHTML = html;
+        }
+
+        function DisplayData(allCountry) {
+            console.log(allCountry);
+
+            var CountryList = document.getElementById("CountryList");
+            var html = "";
+            allCountry.forEach(country => {
+                html += `<tr>
+                    <td>${country.name.common}</td>
+                    <td>${country.cca2}</td>
+                    <td>${country.cca3}</td>
+                    <td>${country.capital}</td>
+                    <td>${country.region}</td>
+                    <td><img src="${country.flags.png}" width="50px"></td>
+                </tr>`;
+            });
+
+            CountryList.innerHTML = html;
+        }
+
+        async function getAllCountry() {
+
+            loading();
+            
+
+            const url = "https://restcountries.com/v3.1/all";
+            const allCountry = await getData(url);
+
+            setTimeout(() => {
+                DisplayData(allCountry);
+            }, 500);
+        }
+
+    </script>
+    <h1>Get Country From API</h1>
+    <button style="padding: 10px 20px; background-color: #6d776d; color: white; border: 1; cursor: pointer;" onclick="getAllCountry()">Get All Country</button>
+    <table id="CountryTable" border="1" width="100%">
+        <thead style="background-color: #EAEAEA;">
+            <tr>
+                <th>Name</th>
+                <th>CCA2</th>
+                <th>CCA3</th>
+                <th>Capital</th>
+                <th>Region</th>
+                <th>Flag</th>
+            </tr>
+        </thead>
+        <tbody id="CountryList">
+            <tr>
+                <td colspan = "6" style="text-align: center;">No data Found!</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>
+

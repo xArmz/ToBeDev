@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Json To Ui</h1>
+    <script>
+        function getStudentList() {
+            var studentList = [
+                {
+                    "firstname": "Arm",
+                    "lastname": "Sukhahuta",
+                    "age": 20,
+                },
+                {
+                    "firstname": "John",
+                    "lastname": "Doe",
+                    "age": 25,
+                },
+                {
+                    "firstname": "Jane",
+                    "lastname": "Doe",
+                    "age": 22,
+                },
+            ];
+            return studentList;
+        }
+        
+        //print student list to UI
+        var studentList = getStudentList();
+        var studentListElement = document.createElement("ul");
+        studentList.forEach(function(student) {
+            var studentElement = document.createElement("li");
+            studentElement.innerHTML = student.firstname + " " + student.lastname + " (" + student.age + ")";
+            studentListElement.appendChild(studentElement);
+        });
+        document.body.appendChild(studentListElement);
+        
+    </script>
+</body>
+</html>
