@@ -19,9 +19,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <script src="script/accinfo.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", displayDataFor);
-  </script>
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -204,7 +201,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <li class="nav-item">
                 <a href="dashboard.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
+                  <p>Dashboard</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -238,9 +235,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Account Table</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Starter Page</li>
@@ -252,33 +246,42 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
 
     <!-- Main content -->
-    
     <body>
-        <section class = "content">
-          <div class = "content-fluid">
-            <div class = "row">
-              <div class = "col-md-12">
-                <div class = "card">
-                  <div class = "card-header">
-                    <h3 class = "card-title">Account Information</h3>
-                  </div>
-                  <div class = "card-body">
-                    <table id="sortableTable" border=3" width="100%" style="table-layout: fixed;">
-                      <thead>
-                        <tr>
-                            <th style="text-align: center" onclick="sortTable(0)">id</th>
-                            <th style="text-align: center" onclick="sortTable(1)">name</th>
-                            <th style="text-align: center" onclick="sortTable(2)">age</th>
-                            <th style="text-align: center" onclick="sortTable(3)">city</th>
-                        </tr>
-                    </thead>
-                      <tbody style="text-align: center" id="studentListFor"></tbody>
-                    </table>
+      <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                Account Information
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#" data-type="admin">Admin</a>
+                                <a class="dropdown-item" href="#" data-type="customer">Customer</a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table id="sortableTable" width="100%" style="table-layout: fixed; border: 3px solid black;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center" onclick="sortTable(0)">ID</th>
+                                        <th style="text-align: center" onclick="sortTable(1)">Name</th>
+                                        <th style="text-align: center" onclick="sortTable(2)">Age</th>
+                                        <th style="text-align: center" onclick="sortTable(3)">City</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="studentListFor" style="text-align: center">
+                                    <!-- Initially empty -->
+                                    <tr><td colspan="4" class="text-center">Select an option above</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </section>
+        </div>
+      </section>
     </body>
     <!-- /.content -->
   </div>
@@ -315,6 +318,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 
-<script src="script/accinfo.js"></script>
 </body>
 </html>
