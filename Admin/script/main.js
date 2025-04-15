@@ -52,13 +52,13 @@ async function login(data) {
 
             setTimeout(function(){
                 window.location.href = 'Profile.html';
-            }, 3000);
+            }, 1000);
         } else {
             showError("Invalid username or password");
         }
     }
     catch (error) {
-        showError("An error occurred. Please try again later");
+        showError("Network Error");
     }
 
 }
